@@ -27,18 +27,64 @@
             padding: 20px;
         }
 
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(26, 54, 93, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #1a365d;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: #2d5a87;
+            background: rgba(26, 54, 93, 0.05);
+            transform: translateY(-1px);
+        }
+
         /* Header */
         header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             padding: 40px 0;
             position: relative;
         }
 
         .header-content {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 170px;
             flex: 1;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
         }
 
         .book-intro-btn {
@@ -66,8 +112,17 @@
             font-size: 2.5rem;
             font-weight: 700;
             color: #1a365d;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #2d5a87;
+            opacity: 0.8;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            margin-bottom: 10px;
         }
 
         .tagline {
@@ -132,7 +187,7 @@
         }
 
         .product-title {
-            font-size: 1.3rem;
+            font-size: 1.04rem;
             font-weight: 600;
             margin-bottom: 10px;
             color: #1a365d;
@@ -142,6 +197,7 @@
         .product-description {
             color: #2d5a87;
             line-height: 1.6;
+            font-size: 0.8rem;
         }
 
         /* Digital Points Animation */
@@ -312,7 +368,7 @@
 
         /* Benefits Section */
         .benefits-section {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(173, 216, 230, 0.9);
             border-radius: 25px;
             padding: 60px 40px;
             margin: 60px 0;
@@ -321,7 +377,7 @@
 
         .benefits-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 20px;
             color: #1a365d;
@@ -379,6 +435,57 @@
             font-size: 1rem;
         }
 
+        /* Logo Carousel */
+        .logo-carousel {
+            margin: 60px 0;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 50px 0;
+            box-shadow: 0 5px 20px rgba(26, 54, 93, 0.1);
+        }
+
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: calc(240px * 22); /* 22 slides total with padding included */
+        }
+
+        .carousel-slide {
+            flex: 0 0 240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .carousel-image {
+            max-width: 102px;
+            max-height: 51px;
+            object-fit: contain;
+            filter: grayscale(0%);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-image:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-240px * 11)); /* Move by 11 slides to create seamless loop */
+            }
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -413,6 +520,31 @@
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .header-left {
+                align-items: center;
+                text-align: center;
+            }
+
+            .header-right {
+                align-items: center;
+                gap: 10px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 6px 12px;
             }
 
             .header-content {
@@ -481,6 +613,21 @@
 
             .feature {
                 font-size: 0.9rem;
+            }
+
+            .logo-carousel {
+                margin: 40px 0;
+                padding: 20px 0;
+            }
+
+            .carousel-slide {
+                flex: 0 0 170px;
+                padding: 10px;
+            }
+
+            .carousel-image {
+                max-width: 85px;
+                max-height: 42.5px;
             }
 
             .benefits-section {
@@ -571,11 +718,11 @@
             }
 
             .product-title {
-                font-size: 1.1rem;
+                font-size: 0.88rem;
             }
 
             .product-description {
-                font-size: 0.9rem;
+                font-size: 0.72rem;
             }
 
             .form-container {
@@ -608,6 +755,21 @@
 
             .feature {
                 font-size: 0.85rem;
+            }
+
+            .logo-carousel {
+                margin: 30px 0;
+                padding: 20px 0;
+            }
+
+            .carousel-slide {
+                flex: 0 0 130px;
+                padding: 5px;
+            }
+
+            .carousel-image {
+                max-width: 68px;
+                max-height: 34px;
             }
 
             .benefits-section {
@@ -728,10 +890,18 @@
             <!-- Header -->
             <header>
                 <div class="header-content">
-                    <div class="logo">CloudPrimes</div>
-                    <div class="tagline">Premium Digital Services with AI-Powered Precision</div>
+                    <div class="header-left">
+                        <div class="logo">CloudPrimes</div>
+                        <div class="subtitle">AI-Powered Upgrades for your Routines</div>
+                    </div>
+                    <div class="nav-links">
+                        <a href="#services" class="nav-link">Services</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
                 </div>
-                <a href="bookintro.html" class="book-intro-btn">Book Intro</a>
+                <div class="header-right">
+                    <a href="bookintro.html" class="book-intro-btn">Book A Meeting</a>
+                </div>
             </header>
 
             <!-- Main Content -->
@@ -815,6 +985,81 @@
                                 <span class="feature-icon">📧</span>
                                 <span>No spam guarantee</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo Carousel -->
+            <div class="logo-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="google-sheets.svg" alt="Google Sheets" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="openai-logo.svg" alt="OpenAI" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="google-calendar-trigger.svg" alt="Google Calendar" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="dropbox.svg" alt="Dropbox" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="facebook-graph-api.svg" alt="Facebook Graph API" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="jira-software.svg" alt="Jira Software" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="trello.svg" alt="Trello" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="slack.svg" alt="Slack" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="supabase.svg" alt="Supabase" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="airtable.svg" alt="Airtable" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="baserow.svg" alt="Baserow" class="carousel-image">
+                        </div>
+                        <!-- Duplicate slides for seamless loop -->
+                        <div class="carousel-slide">
+                            <img src="google-sheets.svg" alt="Google Sheets" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="openai-logo.svg" alt="OpenAI" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="google-calendar-trigger.svg" alt="Google Calendar" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="dropbox.svg" alt="Dropbox" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="facebook-graph-api.svg" alt="Facebook Graph API" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="jira-software.svg" alt="Jira Software" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="trello.svg" alt="Trello" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="slack.svg" alt="Slack" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="supabase.svg" alt="Supabase" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="airtable.svg" alt="Airtable" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="baserow.svg" alt="Baserow" class="carousel-image">
                         </div>
                     </div>
                 </div>
