@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Values - CloudPrimes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            color: #1a365d;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 10px;
+            letter-spacing: -0.025em;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #2d5a87;
+            opacity: 0.8;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.01em;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 54, 93, 0.3);
+        }
+
+        .about-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.1);
+        }
+
+        .about-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #1a365d;
+            letter-spacing: -0.025em;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 4px solid #4ade80;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(26, 54, 93, 0.1);
+        }
+
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a365d;
+            letter-spacing: -0.01em;
+        }
+
+        .value-description {
+            color: #2d5a87;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #2d5a87;
+            border-top: 1px solid rgba(26, 54, 93, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .about-section {
+                padding: 40px 20px;
+                margin: 30px 0;
+            }
+
+            .about-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .value-card {
+                padding: 25px 20px;
+            }
+
+            .value-title {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .value-description {
+                font-size: 0.95rem;
+            }
+
+            .back-btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+
+            header {
+                padding: 30px 0;
+            }
+
+            .logo {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px 10px;
+            }
+
+            .about-section {
+                padding: 30px 15px;
+                margin: 25px 0;
+            }
+
+            .about-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .value-card {
+                padding: 20px 15px;
+            }
+
+            .value-title {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .value-description {
+                font-size: 0.9rem;
+            }
+
+            .back-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+
+            header {
+                padding: 25px 0;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 30px 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 10px 8px;
+            }
+
+            .about-section {
+                padding: 25px 12px;
+            }
+
+            .about-title {
+                font-size: 1.6rem;
+            }
+
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            .value-card {
+                padding: 18px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">CloudPrimes</div>
+            <div class="tagline">Premium Digital Services with AI-Powered Precision</div>
+        </header>
+
+        <!-- Back Button -->
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        
+        <!-- About Section -->
+        <div class="about-section">
+            <h2 class="about-title">About Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3 class="value-title">Lead</h3>
+                    <p class="value-description">Small Businesses will be at the leading edge of A.I application.</p>
+                </div>
+                <div class="value-card">
+                    <h3 class="value-title">Listen</h3>
+                    <p class="value-description">Listening provides the best automation solution for a customer.</p>
+                </div>
+                <div class="value-card">
+                    <h3 class="value-title">Initiative</h3>
+                    <p class="value-description">Take ownership of solutions for customer.</p>
+                </div>
+                <div class="value-card">
+                    <h3 class="value-title">Strive</h3>
+                    <p class="value-description">Strive for excellence.</p>
+                </div>
+                <div class="value-card">
+                    <h3 class="value-title">Creativity</h3>
+                    <p class="value-description">Looking at challenges with fresh eyes and exploring new solutions. Creativity encourages experimentation, even if it means learning from a few flops.</p>
+                </div>
+                <div class="value-card">
+                    <h3 class="value-title">Openness</h3>
+                    <p class="value-description">Creating space for honest conversations, new ideas, and feedback — even the uncomfortable kind. Openness builds trust and drives progress.</p>
+                </div>
+                <div class="value-card">
+                    <h3 class="value-title">Commitment</h3>
+                    <p class="value-description">Showing up with focus, care, and follow-through. Commitment means believing in the work and doing what it takes to see it through.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 CloudPrimes. Built with modern web technologies.</p>
+        </footer>
+    </div>
+</body>
+</html>
