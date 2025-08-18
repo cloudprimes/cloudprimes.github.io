@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudPrimes - Premium Digital Services</title>
+    <title>CloudValve - Premium Digital Services</title>
     <style>
         * {
             margin: 0;
@@ -513,6 +513,45 @@
             }
         }
 
+        /* Bottom Navigation */
+        .bottom-nav {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 15px rgba(26, 54, 93, 0.2);
+        }
+
+        .bottom-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bottom-nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .bottom-nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        .bottom-nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -728,6 +767,20 @@
             .tagline {
                 font-size: 1.1rem;
             }
+
+            .bottom-nav {
+                padding: 15px 0;
+                margin-top: 30px;
+            }
+
+            .bottom-nav-links {
+                gap: 30px;
+            }
+
+            .bottom-nav-link {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -882,6 +935,20 @@
             footer p {
                 font-size: 0.9rem;
             }
+
+            .bottom-nav {
+                padding: 12px 0;
+                margin-top: 25px;
+            }
+
+            .bottom-nav-links {
+                gap: 20px;
+            }
+
+            .bottom-nav-link {
+                font-size: 0.95rem;
+                padding: 6px 12px;
+            }
         }
 
         @media (max-width: 360px) {
@@ -911,6 +978,20 @@
 
             .benefit-card {
                 padding: 18px 12px;
+            }
+
+            .bottom-nav {
+                padding: 10px 0;
+                margin-top: 20px;
+            }
+
+            .bottom-nav-links {
+                gap: 15px;
+            }
+
+            .bottom-nav-link {
+                font-size: 0.9rem;
+                padding: 5px 10px;
             }
         }
 
@@ -1125,7 +1206,7 @@
 
             <!-- Benefits Section -->
             <div class="benefits-section">
-                <h2 class="benefits-title">Benefits of Automation with CloudPrimes</h2>
+                <h2 class="benefits-title">Benefits of Automation with CloudValve</h2>
                 <p class="benefits-subtitle">Transform your business operations with AI-powered automation that saves time, reduces errors, and scales with your growth.</p>
                 
                 <div class="benefits-grid">
@@ -1172,10 +1253,20 @@
                 <a href="about.html" class="about-btn">About Our Values</a>
             </div>
 
+            <!-- Bottom Navigation -->
+            <div class="bottom-nav">
+                <div class="bottom-nav-container">
+                    <div class="bottom-nav-links">
+                        <a href="about.html" class="bottom-nav-link">About</a>
+                        <a href="bookintro.html" class="bottom-nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Footer -->
             <footer>
-                <a href="mailto:contact@cloudprimes.com" class="contact-email">contact@cloudprimes.com</a>
-                <p>&copy; 2025 CloudPrimes. Built with modern web technologies.</p>
+                <a href="mailto:contact@cloudvalve.com" class="contact-email">contact@cloudvalve.com</a>
+                <p>&copy; 2025 CloudValve. Built with modern web technologies.</p>
             </footer>
         </div>
 
