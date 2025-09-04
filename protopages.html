@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page Designs - CloudValve</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            color: #1a365d;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(26, 54, 93, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            color: #1a365d;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: #2d5a87;
+            background: rgba(26, 54, 93, 0.05);
+            transform: translateY(-1px);
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 170px;
+            flex: 1;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+            margin-top: 28px;
+        }
+
+        .book-intro-btn {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.01em;
+            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.2);
+        }
+
+        .book-intro-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26, 54, 93, 0.3);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00ABFF;
+            margin-bottom: 5px;
+            letter-spacing: -0.025em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 50px;
+            flex-shrink: 0;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #2d5a87;
+            opacity: 0.8;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            margin-bottom: 10px;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin: 60px 0;
+            min-height: 70vh;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 20px;
+            letter-spacing: -0.025em;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #2d5a87;
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Sample Pages Grid */
+        .sample-pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .sample-page-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-left: 4px solid #4ade80;
+        }
+
+        .sample-page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(26, 54, 93, 0.15);
+        }
+
+        .sample-page-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .sample-page-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a365d;
+            letter-spacing: -0.01em;
+        }
+
+        .sample-page-description {
+            color: #2d5a87;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .view-page-btn {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .view-page-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(74, 222, 128, 0.3);
+        }
+
+        /* Website Showcase */
+        .website-showcase {
+            margin-bottom: 60px;
+        }
+
+        .showcase-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 40px;
+            letter-spacing: -0.01em;
+        }
+
+        /* New Layout: Top Row Centered, Bottom Row Side by Side */
+        .showcase-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .bottom-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .site-showcase-card.featured {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a365d;
+            letter-spacing: -0.01em;
+            margin: 0;
+        }
+
+        .site-showcase-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .site-showcase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(26, 54, 93, 0.15);
+        }
+
+        .site-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+
+        .site-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .main-site-image, .secondary-site-image {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(26, 54, 93, 0.1);
+            transition: all 0.4s ease;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .main-site-image:hover, .secondary-site-image:hover {
+            transform: perspective(1000px) rotateY(5deg) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(26, 54, 93, 0.2);
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .main-site-image {
+            height: 280px;
+        }
+
+        .secondary-site-image {
+            height: 220px;
+        }
+
+        /* Mobile responsive adjustments for new layout */
+        @media (max-width: 768px) {
+            .showcase-layout {
+                gap: 30px;
+            }
+
+            .bottom-row {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .site-showcase-card {
+                padding: 20px;
+            }
+
+            .site-showcase-card.featured {
+                max-width: 100%;
+            }
+
+            .site-title {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+
+            .site-images {
+                gap: 15px;
+            }
+
+            .main-site-image {
+                height: 220px;
+            }
+
+            .secondary-site-image {
+                height: 180px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(26, 54, 93, 0.1);
+            margin-top: 60px;
+        }
+
+        .contact-email {
+            font-size: 1.1rem;
+            color: #2d5a87;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .contact-email:hover {
+            color: #1a365d;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .header-left {
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .header-right {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 40px;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+
+            .sample-pages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .sample-page-card {
+                padding: 25px 20px;
+            }
+
+
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px 10px;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .sample-pages-grid {
+                gap: 15px;
+            }
+
+            .sample-page-card {
+                padding: 20px 15px;
+            }
+
+            .sample-page-icon {
+                font-size: 2.5rem;
+            }
+
+            .sample-page-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo">
+                            <img src="cvpic3.png" alt="CloudValve Icon" class="logo-icon">
+                            CloudValve
+                        </div>
+                    </a>
+                    <div class="subtitle">Optimized time-saving A.I. tools to improve your business</div>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="https://calendly.com/cloudprimes1/30-minute-meeting" class="book-intro-btn">Book A Meeting</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1 class="page-title">Sample Page Designs</h1>
+            <p class="page-subtitle">Explore our collection of page templates and layouts that showcase AI-driven solutions for your business.</p>
+            
+            <!-- Website Showcase Section -->
+            <div class="website-showcase">
+                <h2 class="showcase-title">Featured Website Designs</h2>
+                
+                <div class="showcase-layout">
+                    <!-- Top Row: Site 3 Centered -->
+                    <div class="top-row">
+                        <!-- Site 3: Service Website -->
+                        <div class="site-showcase-card featured">
+                            <div class="site-images">
+                                <div class="main-site-image">
+                                    <img src="ServiceSite5Sample.png" alt="Service Website Main Page" class="showcase-img">
+                                </div>
+                                <div class="secondary-site-image">
+                                    <img src="ServiceSite6Sample.png" alt="Service Website Services Page" class="showcase-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Title for Bottom Sites -->
+                    <div class="section-title">
+                        <h3>Service Sites</h3>
+                    </div>
+
+                    <!-- Bottom Row: Site 2 and 3 Side by Side -->
+                    <div class="bottom-row">
+                        <!-- Site 2: Salon Website -->
+                        <div class="site-showcase-card">
+                            <div class="site-images">
+                                <div class="main-site-image">
+                                    <img src="SalonSite3Sample .png" alt="Salon Website Design 2 Main Page" class="showcase-img">
+                                </div>
+                                <div class="secondary-site-image">
+                                    <img src="SalonSite4Sample .png" alt="Salon Website Design 2 Services Page" class="showcase-img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Site 1: Salon Website -->
+                        <div class="site-showcase-card">
+                            <div class="site-images">
+                                <div class="main-site-image">
+                                    <img src="SalonSite1Sample.png" alt="Salon Website Main Page" class="showcase-img">
+                                </div>
+                                <div class="secondary-site-image">
+                                    <img src="SalonSite2Sample.png" alt="Salon Website Services Page" class="showcase-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <a href="mailto:contact@cloudvalve.co" class="contact-email">contact@cloudvalve.co</a>
+            <p>&copy; 2025 CloudValve. Optimize with time-saving A.I. tools</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>
