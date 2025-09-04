@@ -43,7 +43,7 @@
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
 
         .nav-link {
@@ -112,6 +112,10 @@
         .book-intro-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(26, 54, 93, 0.3);
+        }
+
+        .mobile-only {
+            display: none;
         }
 
         .logo {
@@ -423,7 +427,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 6px;
             flex-wrap: wrap;
         }
 
@@ -564,6 +568,57 @@
             color: #2d5a87;
             line-height: 1.6;
             font-size: 1rem;
+        }
+
+        /* Automation Features */
+        .automation-features {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .automation-features-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 30px;
+            letter-spacing: -0.01em;
+        }
+
+        .automation-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .automation-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            border-left: 4px solid #4ade80;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .automation-feature:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(26, 54, 93, 0.15);
+        }
+
+        .automation-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .automation-feature span:last-child {
+            color: #2d5a87;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.4;
         }
 
         /* Integration Heading */
@@ -717,12 +772,11 @@
             }
 
             .header-right {
-                align-items: center;
-                gap: 10px;
+                display: none;
             }
 
             .nav-links {
-                gap: 20px;
+                gap: 40px;
             }
 
             .nav-link {
@@ -730,13 +784,17 @@
                 padding: 6px 12px;
             }
 
-            .header-content {
-                order: 2;
+            .book-intro-btn {
+                margin-top: 15px;
+                align-self: flex-start;
             }
 
-            .book-intro-btn {
-                order: 1;
-                margin-bottom: 10px;
+            .mobile-only {
+                display: block;
+            }
+
+            .benefits-subtitle {
+                padding: 0 30px;
             }
 
             .main-content {
@@ -1025,6 +1083,32 @@
                 font-size: 0.95rem;
             }
 
+            .automation-features {
+                margin-top: 30px;
+            }
+
+            .automation-features-title {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+
+            .automation-features-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .automation-feature {
+                padding: 15px;
+            }
+
+            .automation-icon {
+                font-size: 1.3rem;
+            }
+
+            .automation-feature span:last-child {
+                font-size: 0.9rem;
+            }
+
             .email-input {
                 padding: 10px 12px;
                 font-size: 0.95rem;
@@ -1225,6 +1309,7 @@
                             </div>
                         </a>
                         <div class="subtitle">Optimized time-saving A.I. tools to improve your business</div>
+                        <a href="https://calendly.com/cloudprimes1/30-minute-meeting" class="book-intro-btn mobile-only">Book A Meeting</a>
                     </div>
                     <div class="nav-links">
                         <a href="#services" class="nav-link">Services</a>
@@ -1232,7 +1317,7 @@
                     </div>
                 </div>
                 <div class="header-right">
-                    <a href="bookintro.html" class="book-intro-btn">Book A Meeting</a>
+                    <a href="https://calendly.com/cloudprimes1/30-minute-meeting" class="book-intro-btn">Book A Meeting</a>
                 </div>
             </header>
 
@@ -1277,7 +1362,7 @@
                             <div class="point"></div>
                             <div class="point"></div>
                         </div>
-                        <span class="product-icon">🎨</span>
+                        <span class="product-icon">🛍️</span>
                         <h3 class="product-title">Variety of Shops</h3>
                         <p class="product-description">Reduce time spent for support emails, customer response and newsletters with automations tailored to your services. </p>
                     </div>
@@ -1412,7 +1497,7 @@
             <!-- Benefits Section -->
             <div class="benefits-section" id="services">
                 <h2 class="benefits-title">Benefits of Automation with CloudValve</h2>
-                <p class="benefits-subtitle">Improved productivity comes naturally when you can sharpen your edge on service and product delivery. Your business gains a stronger position, producing more at a lower cost and using time more efficiently. Increased business growth becomes achievable as greater capacity allows you to expand and improve services for your customers. AI-powered automation plays a pivotal role in making these outcomes possible, improving operations from marketing to back-office tasks. It reduces errors, eliminates repetitive work, and ensures your team focuses on higher-value activities. With automation driving consistency, speed, and accuracy, your business can scale more effectively. Ultimately, these benefits create a lasting competitive edge that positions your company for long-term success.</p>
+                <p class="benefits-subtitle">Improved productivity comes naturally when you can sharpen your edge on service and product delivery. Your business gains a stronger position, producing more at a lower cost and using time more efficiently. Increased business growth becomes achievable as greater capacity allows you to expand and improve services for your customers. AI-powered automation plays a pivotal role in making these outcomes possible, improving operations from process flow to back-office tasks. With automation driving consistency, speed, and accuracy, your business can scale more effectively. Ultimately, these benefits create a lasting competitive edge that positions your company for long-term success.</p>
                 
                 <div class="benefits-grid">
                     <div class="benefit-card">
@@ -1445,12 +1530,42 @@
                         <p class="benefit-description">Secure your data and processes with enterprise-grade security. Our automation platforms include built-in security features and compliance standards.</p>
                     </div>
                     
-                    <div class="benefit-card">
-                        <div class="benefit-icon">🚀</div>
-                        <h3 class="benefit-title">24/7 Operations</h3>
-                        <p class="benefit-description">Keep your business running around the clock. Automated systems work continuously, ensuring your processes never stop, even outside business hours.</p>
+                                            <div class="benefit-card">
+                            <div class="benefit-icon">🚀</div>
+                            <h3 class="benefit-title">24/7 Operations</h3>
+                            <p class="benefit-description">Keep your business running around the clock. Automated systems work continuously, ensuring your processes never stop, even outside business hours.</p>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="automation-features">
+                        <h3 class="automation-features-title">Service Options</h3>
+                        <div class="automation-features-grid">
+                            <div class="automation-feature">
+                                <span class="automation-icon">📱</span>
+                                <span>Auto-Post to Instagram, TikTok, Twitter and Bluesky automatically</span>
+                            </div>
+                            <div class="automation-feature">
+                                <span class="automation-icon">📧</span>
+                                <span>Auto-Response for email</span>
+                            </div>
+                            <div class="automation-feature">
+                                <span class="automation-icon">🧾</span>
+                                <span>Auto-Process invoices</span>
+                            </div>
+                            <div class="automation-feature">
+                                <span class="automation-icon">💬</span>
+                                <span>Auto-Response for Instagram customer chats</span>
+                            </div>
+                            <div class="automation-feature">
+                                <span class="automation-icon">📢</span>
+                                <span>Automated marketing</span>
+                            </div>
+                            <div class="automation-feature">
+                                <span class="automation-icon">📰</span>
+                                <span>Auto-Process newsletters</span>
+                            </div>
+                        </div>
+                    </div>
             </div>
 
 
@@ -1459,7 +1574,7 @@
                 <div class="bottom-nav-container">
                     <div class="bottom-nav-links">
                         <a href="about.html" class="bottom-nav-link">About</a>
-                        <a href="bookintro.html" class="bottom-nav-link">Contact</a>
+                        <a href="https://calendly.com/cloudprimes1/30-minute-meeting" class="bottom-nav-link">Contact</a>
                     </div>
                 </div>
             </div>
@@ -1475,8 +1590,8 @@
 
         // CTA button click handler
         document.querySelector('.cta-button').addEventListener('click', function() {
-            // Navigate to the booking page
-            window.location.href = 'bookintro.html';
+            // Navigate to the Calendly booking page
+            window.location.href = 'https://calendly.com/cloudprimes1/30-minute-meeting';
         });
 
         // Enhanced hover effects for product cards
