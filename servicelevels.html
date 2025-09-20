@@ -212,8 +212,9 @@
         }
 
         .price-period {
-            font-size: 1rem;
-            color: #666;
+            font-size: 1.2rem;
+            color: #999;
+            font-weight: 400;
         }
 
         .service-description {
@@ -280,6 +281,68 @@
             font-size: 1rem;
         }
 
+        /* Expandable Features Styling */
+        .expandable-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f4fd 100%);
+            border-radius: 12px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .expandable-header:hover {
+            background: linear-gradient(135deg, #e8f4fd 0%, #d4edda 100%);
+        }
+
+        .expandable-title {
+            color: #1a365d;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .expand-icon {
+            font-size: 1.5rem;
+            color: #00ABFF;
+            transition: transform 0.3s ease;
+            user-select: none;
+        }
+
+        .expand-icon.expanded {
+            transform: rotate(45deg);
+        }
+
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f4fd 100%);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .expandable-content.expanded {
+            max-height: 200px;
+        }
+
+        .expandable-content ul {
+            list-style: none;
+            padding: 0 20px 20px 20px;
+            margin: 0;
+        }
+
+        .expandable-content li {
+            padding: 8px 0;
+            color: #2d5a87;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .book-button {
             width: 100%;
             background: linear-gradient(135deg, #00ABFF 0%, #0088cc 100%);
@@ -299,6 +362,26 @@
         .book-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 171, 255, 0.3);
+        }
+
+        /* Stripe Buy Button Styling */
+        stripe-buy-button {
+            display: block;
+            border: 2px solid #b3d9ff;
+            border-radius: 12px;
+            padding: 28px 48px 28px 5px;
+            transition: all 0.3s ease;
+            background: rgba(179, 217, 255, 0.1);
+            box-sizing: border-box;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        stripe-buy-button:hover {
+            border-color: #00ABFF;
+            background: rgba(0, 171, 255, 0.15);
+            box-shadow: 0 4px 15px rgba(0, 171, 255, 0.2);
+            transform: translateY(-1px);
         }
 
         /* Bottom Navigation */
@@ -361,37 +444,215 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
             .header {
                 flex-direction: column;
                 text-align: center;
                 gap: 20px;
+                padding: 15px 0;
             }
 
             .nav-links {
-                gap: 20px;
+                gap: 15px;
                 justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .logo-icon {
+                width: 50px;
+                height: 40px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
             }
 
             .page-title {
                 font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+
+            .page-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+                padding: 0 10px;
             }
 
             .pricing-container {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 25px;
+                margin-bottom: 60px;
             }
 
             .pricing-card.featured {
                 transform: none;
+                border: 2px solid #00ABFF;
             }
 
             .pricing-card {
-                padding: 30px 20px;
+                padding: 25px 15px;
+                margin: 0 5px;
+            }
+
+            .service-name {
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+            }
+
+            .init-fee {
+                font-size: 1rem;
+            }
+
+            .monthly-price {
+                font-size: 2rem;
+            }
+
+            .price-period {
+                font-size: 1rem;
+            }
+
+            .service-description {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .features-list li {
+                padding: 10px 0;
+                font-size: 0.9rem;
+            }
+
+            .feature-icon {
+                font-size: 1.1rem;
+            }
+
+            /* Stripe Button Mobile Optimization */
+            stripe-buy-button {
+                padding: 20px 15px 20px 65px;
+                margin: 0 auto;
+                max-width: calc(100% - 20px);
+                display: block;
+            }
+
+            .book-button {
+                padding: 12px 15px;
+                font-size: 1rem;
+                margin: 0 auto;
+                max-width: calc(100% - 20px);
+                display: block;
+            }
+
+            /* Expandable Features Mobile */
+            .expandable-header {
+                padding: 12px 15px;
+            }
+
+            .expandable-title {
+                font-size: 1.1rem;
+            }
+
+            .expand-icon {
+                font-size: 1.3rem;
+            }
+
+            .expandable-content ul {
+                padding: 0 15px 15px 15px;
+            }
+
+            .expandable-content li {
+                font-size: 0.9rem;
+                padding: 6px 0;
             }
 
             .bottom-nav-links {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
+            }
+
+            .bottom-nav-link {
+                font-size: 1rem;
+            }
+
+            .contact-email {
+                font-size: 1.1rem;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .pricing-card {
+                padding: 20px 10px;
+                margin: 0;
+            }
+
+            .service-name {
+                font-size: 1.4rem;
+            }
+
+            .monthly-price {
+                font-size: 1.8rem;
+            }
+
+            .features-list li {
+                font-size: 0.85rem;
+                padding: 8px 0;
+            }
+
+            stripe-buy-button {
+                padding: 15px 10px 15px 40px;
+                margin: 0 auto;
+                max-width: calc(100% - 20px);
+                display: block;
+            }
+
+            .book-button {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+                margin: 0 auto;
+                max-width: calc(100% - 20px);
+                display: block;
+            }
+
+            .expandable-header {
+                padding: 10px 12px;
+            }
+
+            .expandable-title {
+                font-size: 1rem;
+            }
+
+            .expandable-content ul {
+                padding: 0 12px 12px 12px;
+            }
+
+            .expandable-content li {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -433,9 +694,8 @@
                 <div class="pricing-card">
                     <h2 class="service-name">Basic Service</h2>
                     <div class="pricing-info">
-                        <div class="init-fee">$200 initialization fee</div>
-                        <div class="monthly-price">$70</div>
-                        <div class="price-period">a month</div>
+                        <div class="init-fee">$90 Install</div>
+                        <div class="monthly-price">$70<span class="price-period">/month</span></div>
                     </div>
                     <p class="service-description">Includes automation service and A.I. foundational model, with 3 A.I. agent services.</p>
                     <ul class="features-list">
@@ -443,16 +703,23 @@
                         <li><span class="feature-icon">📧</span>Auto email response</li>
                         <li><span class="feature-icon">🏷️</span>Auto email tagging</li>
                     </ul>
-                    <a href="https://calendly.com/cloudprimes1/30-minute-meeting" class="book-button">Get Started</a>
+                    <script async
+                      src="https://js.stripe.com/v3/buy-button.js">
+                    </script>
+
+                    <stripe-buy-button
+                      buy-button-id="buy_btn_1S9J6cPDvZt9NejGHvNFmim9"
+                      publishable-key="pk_live_51RxJ2WPDvZt9NejGFajbySfxfB6v3istlEqHo2PScqksRJAlFiX5ypheGR7rmSNTAS90EopJ4wdkc73vYZaJBCqH00QxZzL08l"
+                    >
+                    </stripe-buy-button>
                 </div>
 
                 <!-- Standard Service -->
                 <div class="pricing-card featured">
                     <h2 class="service-name">Standard Service</h2>
                     <div class="pricing-info">
-                        <div class="init-fee">$200 initialization fee</div>
-                        <div class="monthly-price">$110</div>
-                        <div class="price-period">a month</div>
+                        <div class="init-fee">$150 Install</div>
+                        <div class="monthly-price">$110<span class="price-period">/month</span></div>
                     </div>
                     <p class="service-description">Includes automation service and A.I. foundational model, with 5 A.I. agent services.</p>
                     <ul class="features-list">
@@ -462,16 +729,23 @@
                         <li><span class="feature-icon">📰</span>Automated newsletter</li>
                         <li><span class="feature-icon">🎥</span>Automated video posts to Instagram, TikTok, Facebook and Bluesky</li>
                     </ul>
-                    <a href="https://calendly.com/cloudprimes1/30-minute-meeting" class="book-button">Most Popular</a>
+                    <script async
+                      src="https://js.stripe.com/v3/buy-button.js">
+                    </script>
+
+                    <stripe-buy-button
+                      buy-button-id="buy_btn_1S9JDHPDvZt9NejGkxRIscp6"
+                      publishable-key="pk_live_51RxJ2WPDvZt9NejGFajbySfxfB6v3istlEqHo2PScqksRJAlFiX5ypheGR7rmSNTAS90EopJ4wdkc73vYZaJBCqH00QxZzL08l"
+                    >
+                    </stripe-buy-button>
                 </div>
 
                 <!-- Premium Service -->
                 <div class="pricing-card">
                     <h2 class="service-name">Premium Service</h2>
                     <div class="pricing-info">
-                        <div class="init-fee">$200 initialization fee</div>
-                        <div class="monthly-price">$130</div>
-                        <div class="price-period">a month</div>
+                        <div class="init-fee">$300 Install</div>
+                        <div class="monthly-price">$250<span class="price-period">/month</span></div>
                     </div>
                     <p class="service-description">Includes automation service and A.I. foundational model, with up to 10 A.I. agent services.</p>
                     <ul class="features-list">
@@ -481,15 +755,28 @@
                         <li><span class="feature-icon">📰</span>Automated newsletter</li>
                         <li><span class="feature-icon">🎥</span>Automated video posts to Instagram, TikTok, Facebook and Bluesky</li>
                     </ul>
-                    <div class="premium-features">
-                        <h4>Additional Premium Features:</h4>
-                        <ul>
-                            <li><span class="feature-icon">🧾</span>Automated invoice handling</li>
-                            <li><span class="feature-icon">📄</span>Auto PDF handling for backend processes</li>
-                            <li><span class="feature-icon">🤖</span>AI-Powered Customer Segmentation</li>
-                        </ul>
+                    <div class="expandable-features">
+                        <div class="expandable-header" onclick="toggleExpandable()">
+                            <h4 class="expandable-title">Additional Premium Features:</h4>
+                            <span class="expand-icon" id="expandIcon">+</span>
+                        </div>
+                        <div class="expandable-content" id="expandableContent">
+                            <ul>
+                                <li><span class="feature-icon">🧾</span>Automated invoice handling</li>
+                                <li><span class="feature-icon">📄</span>Auto PDF handling for backend processes</li>
+                                <li><span class="feature-icon">🤖</span>AI-Powered Customer Segmentation</li>
+                            </ul>
+                        </div>
                     </div>
-                    <a href="https://calendly.com/cloudprimes1/30-minute-meeting" class="book-button">Go Premium</a>
+                    <script async
+                      src="https://js.stripe.com/v3/buy-button.js">
+                    </script>
+
+                    <stripe-buy-button
+                      buy-button-id="buy_btn_1S9JIJPDvZt9NejGyKZKiXaV"
+                      publishable-key="pk_live_51RxJ2WPDvZt9NejGFajbySfxfB6v3istlEqHo2PScqksRJAlFiX5ypheGR7rmSNTAS90EopJ4wdkc73vYZaJBCqH00QxZzL08l"
+                    >
+                    </stripe-buy-button>
                 </div>
             </div>
         </main>
@@ -513,11 +800,18 @@
 
     <script>
         // CTA button click handler
-        document.querySelectorAll('.cta-button, .book-button').forEach(button => {
+        document.querySelectorAll('.cta-button').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 // Navigate to the Calendly booking page
                 window.location.href = 'https://calendly.com/cloudprimes1/30-minute-meeting';
+            });
+        });
+        
+        // Book button click handler - let them use their own href
+        document.querySelectorAll('.book-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Let the link work naturally - no preventDefault needed
             });
         });
 
@@ -535,6 +829,22 @@
                 }
             });
         });
+
+        // Expandable features functionality
+        function toggleExpandable() {
+            const content = document.getElementById('expandableContent');
+            const icon = document.getElementById('expandIcon');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('expanded');
+                icon.textContent = '+';
+            } else {
+                content.classList.add('expanded');
+                icon.classList.add('expanded');
+                icon.textContent = '×';
+            }
+        }
     </script>
 </body>
 </html>
